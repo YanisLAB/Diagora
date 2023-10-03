@@ -1,0 +1,35 @@
+<div class="contentPage">
+    <div class="leftPart">
+        <h1 class="title">Créez votre compte !</h1>
+        <div class="inputContent">
+            <label for="">Nom <span>*</span></label>
+            <input type="text" id="emailInput" #name (keyup)="onEnterName(name.value)">
+        </div>
+        <div class="inputContent">
+            <label for="">E-mail <span>*</span></label>
+            <input type="text" id="emailInput" #box (keyup)="onEnterEmail(box.value)">
+        </div>
+        <div class="inputContent">
+            <label for="">Mot-de-passe <span>*</span></label>
+            <input type="password" id="passwordInput" #pass (keyup)="onEnterPass(pass.value)">
+        </div>
+        <div class="inputContent">
+            <label for="">Confirmez votre mot-de-passe <span>*</span></label>
+            <input type="password" id="passwordConfInput" #passConf (keyup)="onEnterPassConf(passConf.value)">
+        </div>
+        <button (click)="register()" class="login">Créer sont compte</button>
+        <div class="contentRegister">
+            <p>Vous avez déjà un compte ? <br><span class="register" routerLink="/login">Connectez-vous</span></p>
+        </div>
+    </div>
+    <div class="rightPart">
+        <img class="imgLogo" src="../../assets/logo.png" alt="logo">
+        <h2 class="undertitle">DIAGORA</h2>
+    </div>
+    <div *ngIf="popUp">
+        <div class="popUp">
+            <h3>{{Erreur}}</h3>
+            <button (click)="closePopUp()">Fermer</button>
+        </div>
+    </div>
+</div>

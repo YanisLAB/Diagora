@@ -1,0 +1,37 @@
+<div class="contentPage">
+    <div class="leftPart">
+        <h1 class="title">Bienvenue !</h1>
+        <div class="inputContent">
+            <label for="">E-mail <span>*</span></label>
+            <input type="text" id="emailInput" #box [(ngModel)]="name">
+        </div>
+        <div class="inputContent">
+            <label for="">Mot-de-passe <span>*</span></label>
+            <input type="password" id="passwordInput" #pass [(ngModel)]="password">
+        </div>
+        <div class="rememberContent">
+            <div>
+                <input class="inputBox" type="checkbox" id="rememberMeInput" (click)="onRem()">
+                <label for="">Rester connecté</label>
+            </div>
+            <div>
+                <a class="leftMDP" routerLink="/forgot-password">Mot-de-passe oublié ?</a>
+            </div>
+        </div>
+        <button (click)="login()" class="login">Connectez-vous</button>
+        <div class="contentRegister">
+            <p>Vous n'avez pas de compte ? <br><span class="register" routerLink="/register">Créer votre compte</span>
+            </p>
+        </div>
+    </div>
+    <div class="rightPart">
+        <img class="imgLogo" src="../../assets/logo.png" alt="logo">
+        <h2 class="undertitle">DIAGORA</h2>
+    </div>
+    <div *ngIf="popUp">
+        <div class="popUp">
+            <h3>{{Erreur}}</h3>
+            <button (click)="closePopUp()">Fermer</button>
+        </div>
+    </div>
+</div>

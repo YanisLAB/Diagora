@@ -1,0 +1,111 @@
+<div>
+    <div class="NavBar">
+        <img class="logo" src="../../assets/logo.png" alt="" (click)="goto('home')">
+        <div class="contentCenter">
+            <div class="contentBox" (click)="goto('planning')">
+                <img src="../../assets/planning.svg" alt="">
+                <h2>Planning</h2>
+            </div>
+            <div class="contentBox">
+                <img src="../../assets/command.svg" alt="">
+                <h2>Commandes</h2>
+            </div>
+            <div class="contentBox" (click)="goto('vehicule')">
+                <img src="../../assets/vehicule.svg" alt="">
+                <h2>Vehicules</h2>
+            </div>
+            <div class="contentBox" (click)="goto('statistic')">
+                <img src="../../assets/statistic.svg" alt="">
+                <h2>Statistiques</h2>
+            </div>
+        </div>
+        <div class="boxProfile">
+            <div class="contentBox" (click)="goto('profile')">
+                <img src="../../assets/profile.svg" alt="">
+                <h2>Profile</h2>
+            </div>
+            <div class="contentBox" (click)="logout()">
+                <h2>Déconnection</h2>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="logout1" class="logout">
+        <div class="contentBox" (click)="cancel()">
+            <h2>Annuler</h2>
+        </div>
+        <div class="contentBox" (click)="confirm()">
+            <h2>Confirmer</h2>
+        </div>
+    </div>
+    <div class="pageContent">
+        <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title>Commande pour: <strong>Jean</strong></mat-card-title>
+                <mat-card-subtitle>Livreur: <strong>Mark</strong> </mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content align="end">
+                <img class="cardImg" mat-card-lg-image src="./assets/cardboardBox.jpg" >
+            </mat-card-content>
+            <mat-card-actions align="end" >
+                <a mat-fab extended color="accent" (click)="openDialog(1, 'Jean', '2023-10-03_10:30', '1 Place Vendome', 'Mark')">
+                    <mat-icon>menu</mat-icon>
+                </a>
+                <a mat-fab extended color="accent" (click)="commandAction('EditCommand')">
+                    <mat-icon>settings</mat-icon>
+                </a>
+                <a mat-fab extended color="accent" (click)="commandAction('DeleteCommand')">
+                    <mat-icon>delete</mat-icon>
+                </a>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title>Commande pour: <strong>Pierre</strong></mat-card-title>
+                <mat-card-subtitle>Livreur: <strong>Mark</strong> </mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content align="end">
+                <img class="cardImg" mat-card-lg-image src="./assets/cardboardBox.jpg" >
+            </mat-card-content>
+            <mat-card-actions align="end" >
+                <a mat-fab extended color="accent" (click)="openDialog(2, 'Pierre', '2023-10-03_12:30', '6 Place Paul Bec', 'Mark')">
+                    <mat-icon>menu</mat-icon>
+                </a>
+                <a mat-fab extended color="accent" (click)="commandAction('EditCommand')">
+                    <mat-icon>settings</mat-icon>
+                </a>
+                <a mat-fab extended color="accent" (click)="commandAction('DeleteCommand')">
+                    <mat-icon>delete</mat-icon>
+                </a>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title>Commande pour: <strong>Maxime</strong></mat-card-title>
+                <mat-card-subtitle>Livreur: <strong>James</strong> </mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content align="end">
+                <img class="cardImg" mat-card-lg-image src="./assets/cardboardBox.jpg" >
+            </mat-card-content>
+            <mat-card-actions align="end" >
+                <a mat-fab extended color="accent" (click)="openDialog(3, 'Maxime', '2023-10-03_11:00', '3 Rue Neptune', 'James')">
+                    <mat-icon>menu</mat-icon>
+                </a>
+                <a mat-fab extended color="accent" (click)="commandAction('EditCommand')">
+                    <mat-icon>settings</mat-icon>
+                </a>
+                <a mat-fab extended color="accent" (click)="commandAction('DeleteCommand')">
+                    <mat-icon>delete</mat-icon>
+                </a>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+    <div class="editPage">
+        <button mat-flat-button color="primary" (click)="commandAction('AddCommand')">Nouvelle Commande</button>
+    </div>
+</div>
