@@ -21,8 +21,6 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "@asymmetrik/ngx-leaflet": "^16.0.1",
-    "@syncfusion/ej2-angular-grids": "^23.1.38",
-    "@syncfusion/ej2-angular-schedule": "^23.1.38",
     "axios": "^1.5.1",
     "chart.js": "^4.4.0",
     "crypto-browserify": "^3.12.0",
